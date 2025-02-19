@@ -1,0 +1,78 @@
+---
+export const prerender = true;
+
+import { Image } from "astro:assets";
+
+import Layout from "@/layouts/Layout.astro";
+
+import AstroLogo from "@/assets/AstroLogo.astro";
+import CloudflareLogo from "@/assets/CloudflareLogo.astro";
+---
+
+<Layout>
+	<div class="center">
+		<div class="logos">
+			<a class="logo astro" href="https://astro.build/" target="_blank">
+				<AstroLogo />
+			</a>
+
+			<a class="logo hono" href="https://hono.dev/" target="_blank">
+				<Image
+					height={64}
+					width={64}
+					src="https://hono.dev/images/logo.svg"
+					alt="Hono logo"
+				/>
+			</a>
+
+			<a
+				class="logo cf"
+				href="https://www.cloudflare.com/"
+				target="_blank">
+				<CloudflareLogo />
+			</a>
+		</div>
+
+		<h2>Astro + Hono + Cloudflare</h2>
+	</div>
+</Layout>
+
+<style>
+	body,
+	a {
+		background-color: #212121;
+		color: #e9edee;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	.center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 32px;
+		height: 90vh;
+	}
+
+	.logos {
+		display: flex;
+		align-items: center;
+		gap: 96px;
+	}
+
+	.logo {
+		will-change: filter;
+		transition: filter 300ms;
+		background: transparent;
+	}
+
+	.logo.astro:hover {
+		filter: drop-shadow(0 0 2em #e23985aa);
+	}
+	.logo.hono:hover {
+		filter: drop-shadow(0 0 2em #fd6e36aa);
+	}
+	.logo.cf:hover {
+		filter: drop-shadow(0 0 2em #f8932daa);
+	}
+</style>
