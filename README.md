@@ -7,4 +7,4 @@ npm create cloudflare
 ```
 
 Then, choose **Template from a Github repo** and paste this link:
-"https://github.com/yourusername/astro-hono-pages"
+"https://github.com/zero-one366/astro-hono-pages"
